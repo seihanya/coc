@@ -48,7 +48,7 @@ public class Game extends JFrame implements ActionListener,MouseListener{
     static JLabel sandemage = new JLabel();
     static JLabel startmenu = new JLabel();
     static JLabel endmenu = new JLabel();
-    static boolean rolp = true;
+    static boolean rolp = false;
     static boolean rolpo = true;
     static boolean rols = true;
     static boolean prol = true;
@@ -70,13 +70,13 @@ public class Game extends JFrame implements ActionListener,MouseListener{
     		return false;
     	}
     }
-	//³]©w­I´º
+	//è¨­å®šèƒŒæ™¯
 	public void setBg(ImageIcon img){
 	    ((JPanel)this.getContentPane()).setOpaque(false);  
 		this.getLayeredPane().add(background, new Integer(Integer.MIN_VALUE));
 		background.setBounds(0, 0, img.getIconWidth(), img.getIconHeight());
 		}
-	//µe­±¤Á´«
+	//ç•«é¢åˆ‡æ›
 	public void change(JPanel jp,ImageIcon img){
 		exit.setVisible(true);
 	    jp.add(exit);
@@ -94,9 +94,9 @@ public class Game extends JFrame implements ActionListener,MouseListener{
 		bt.setBorderPainted(false);
 		bt.setContentAreaFilled(false);
 	}
-	//³]©w
+	//è¨­å®š
 	public static void set(){
-		//³]©w«ö¶s
+		//è¨­å®šæŒ‰éˆ•
 		nr.setBounds(390,140,125,140);
 		so.setBounds(425,325,30,30);
 		pa.setBounds(460,350,20,20);
@@ -169,7 +169,7 @@ public class Game extends JFrame implements ActionListener,MouseListener{
 	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		//³]©w¹Ï¤ù
+		//è¨­å®šåœ–ç‰‡
 		bg1 = new ImageIcon("background.jpg");
 		bg2 = new ImageIcon("end.jpg");
 		bg3 = new ImageIcon("gameover.jpg");
@@ -206,7 +206,7 @@ public class Game extends JFrame implements ActionListener,MouseListener{
 		fir.add(lab);
 		fir.add(cent);	
 		set();
-		//³]©wcent­±ªO
+		//è¨­å®šcenté¢æ¿
 		cent.setOpaque(false);
 		cent.setLayout(null);
 		cent.setVisible(false);
@@ -275,13 +275,13 @@ public class Game extends JFrame implements ActionListener,MouseListener{
 			sanline.setVisible(false);
 			background.setIcon(bg3);
 		}
-		//¶}©l¹CÀ¸
+		//é–‹å§‹éŠæˆ²
 		if(btn==newgame){
 			cent.setVisible(true);
 			newgame.setVisible(false);
 			start.setVisible(false);
 		}
-		//®Ñ©Ğ
+		//æ›¸æˆ¿
 		if(btn==wr){
 			west.add(book);
 			change(west,imgs[4]);
@@ -289,7 +289,7 @@ public class Game extends JFrame implements ActionListener,MouseListener{
 			lab.setVisible(true);
 			book.setVisible(true);
 		  }
-		//¼p©Ğ
+		//å»šæˆ¿
 		else if(btn==nr){
 			north.add(pot);
 			north.add(fork);
@@ -297,7 +297,7 @@ public class Game extends JFrame implements ActionListener,MouseListener{
 			lab.setVisible(true);
 			change(north,imgs[1]);
 			}
-		//¯È±ø
+		//ç´™æ¢
 		else if(btn==pa){
 			if(rolp){
 			paper.add(see);
@@ -307,7 +307,7 @@ public class Game extends JFrame implements ActionListener,MouseListener{
 			labp.setIcon(imgs[8]);
 			labp.setVisible(true);
 			}
-		//´ö
+		//æ¹¯
 		else if(btn==so){
 			change(soup,imgs[5]);
 			soup.add(che);
@@ -321,7 +321,7 @@ public class Game extends JFrame implements ActionListener,MouseListener{
 			labs.setVisible(true);
 			soupdri = true; 
 			}
-		//ÃÑ¯}§P©w
+		//è­˜ç ´åˆ¤å®š
 		if(btn==see){
 			int find = dice.nextInt(100);
 			rolp = false;
@@ -337,7 +337,7 @@ public class Game extends JFrame implements ActionListener,MouseListener{
 			}
 			see.setVisible(false);
 		}
-		//½Õ¬d´ö
+		//èª¿æŸ¥æ¹¯
 		if(btn==che&&rols){
 			labs.setIcon(imgs[19]);
 			che.setVisible(false);
@@ -345,9 +345,9 @@ public class Game extends JFrame implements ActionListener,MouseListener{
 			med.setVisible(true);
 			soupdri = false;
 		}
-		//³Ü´ö
+		//å–æ¹¯
 		if(btn==dri){
-			//¹CÀ¸µ²§ô
+			//éŠæˆ²çµæŸ
 			if(poisondrink){
 				west.setVisible(false);
 				north.setVisible(false);
@@ -375,7 +375,7 @@ public class Game extends JFrame implements ActionListener,MouseListener{
 				sanvalue.setVisible(true);
 			}
 		}
-		//Âå¾Ç§P©w
+		//é†«å­¸åˆ¤å®š
 		if(btn==med){
 			int medic = dice.nextInt(100);
 			if(medic<60){
@@ -389,7 +389,7 @@ public class Game extends JFrame implements ActionListener,MouseListener{
 				blood = true;
 			}			
 		}
-		//Áç¤l
+		//é‹å­
 		if(btn==pot){
 			change(potp,imgs[7]);
 			potp.add(labpo);
@@ -407,7 +407,7 @@ public class Game extends JFrame implements ActionListener,MouseListener{
 			rolpo=false;
 			}
 		}
-		//À\¨ã
+		//é¤å…·
 		if(btn==fork){
 			silver.setVisible(true);
 			silver.setIcon(imgs[34]);
@@ -423,7 +423,7 @@ public class Game extends JFrame implements ActionListener,MouseListener{
 				poisondrink = true;
 			}
 		}
-		//®Ñ
+		//æ›¸
 		if(btn==book){
 			labb.setIcon(imgs[32]);
 			labb.setVisible(true);
@@ -434,13 +434,13 @@ public class Game extends JFrame implements ActionListener,MouseListener{
 			west.add(open);
 			bookfind = true;
 		}
-		//Â½¶}®Ñ
+		//ç¿»é–‹æ›¸
 		if(btn==open){
 			labb.setIcon(imgs[33]);
 			open.setVisible(false);
 			bookfind = false;
 		}
-		//¯È±ø²z´¼§P©w
+		//ç´™æ¢ç†æ™ºåˆ¤å®š
 		if(btn==srol[0]){
 			srol[0].setVisible(false);
 			   if(sancheck()){
@@ -451,7 +451,7 @@ public class Game extends JFrame implements ActionListener,MouseListener{
 					drol[0].setVisible(true);
 			   }    	    
 		}
-		//Áç¤l²z´¼§P©w
+		//é‹å­ç†æ™ºåˆ¤å®š
 		if(btn==srol[1]){
 			srol[1].setVisible(false);
 			   if(sancheck()){
@@ -465,7 +465,7 @@ public class Game extends JFrame implements ActionListener,MouseListener{
 				   drol[1].setVisible(true);
 			   }    	    
 		}
-		//Âå¾Ç²z´¼§P©w
+		//é†«å­¸ç†æ™ºåˆ¤å®š
 		if(btn==srol[2]){
 			srol[2].setVisible(false);
 			   if(sancheck()){
@@ -479,7 +479,7 @@ public class Game extends JFrame implements ActionListener,MouseListener{
 				   drol[2].setVisible(true);
 			   }    	    
 		}
-		//³Ü´öª¾±¡²z´¼§P©w
+		//å–æ¹¯çŸ¥æƒ…ç†æ™ºåˆ¤å®š
 		if(btn==srol[3]){
 			srol[3].setVisible(false);
 			   if(sancheck()){
@@ -493,7 +493,7 @@ public class Game extends JFrame implements ActionListener,MouseListener{
 				   drol[3].setVisible(true);
 			   }    	    
 		}
-		//³Ü´ö¤£ª¾±¡²z´¼§P©w
+		//å–æ¹¯ä¸çŸ¥æƒ…ç†æ™ºåˆ¤å®š
 		if(btn==srol[4]){
 			srol[4].setVisible(false);
 			   if(sancheck()){
@@ -505,7 +505,7 @@ public class Game extends JFrame implements ActionListener,MouseListener{
 				   drol[5].setVisible(true);
 			   }    	    
 		}
-		//¯È±ø¶Ë®`§P©w
+		//ç´™æ¢å‚·å®³åˆ¤å®š
 		if(btn==drol[0]){
 			drol[0].setVisible(false);
 			sandemage.setVisible(true);
@@ -515,7 +515,7 @@ public class Game extends JFrame implements ActionListener,MouseListener{
 			san-=demage;
 			sanline.setText("SAN:"+san+"/80");
 		}
-		//Áç¤l¶Ë®`§P©w
+		//é‹å­å‚·å®³åˆ¤å®š
 		if(btn==drol[1]){
 			drol[1].setVisible(false);
 			sandemage.setVisible(true);
@@ -526,7 +526,7 @@ public class Game extends JFrame implements ActionListener,MouseListener{
 			sanline.setText("SAN:"+san+"/80");
 			exit.setVisible(true);
 		}
-		//Âå¾Ç¶Ë®`§P©w
+		//é†«å­¸å‚·å®³åˆ¤å®š
 		if(btn==drol[2]){
 			drol[2].setVisible(false);
 			sandemage.setVisible(true);
@@ -537,7 +537,7 @@ public class Game extends JFrame implements ActionListener,MouseListener{
 			sanline.setText("SAN:"+san+"/80");
 			exit.setVisible(true);
 		}
-		//³Ü´öª¾±¡¶Ë®`§P©w
+		//å–æ¹¯çŸ¥æƒ…å‚·å®³åˆ¤å®š
 		if(btn==drol[3]){
 			drol[3].setVisible(false);
 			sandemage.setVisible(true);
@@ -548,7 +548,7 @@ public class Game extends JFrame implements ActionListener,MouseListener{
 			sanline.setText("SAN:"+san+"/80");
 			exit.setVisible(true);
 		}
-		//³Ü´ö¤£ª¾±¡¦¨¥\¶Ë®`§P©w
+		//å–æ¹¯ä¸çŸ¥æƒ…æˆåŠŸå‚·å®³åˆ¤å®š
 		if(btn==drol[4]){
 			drol[4].setVisible(false);
 			sandemage.setVisible(true);
@@ -559,7 +559,7 @@ public class Game extends JFrame implements ActionListener,MouseListener{
 			sanline.setText("SAN:"+san+"/80");
 			exit.setVisible(true);
 		}
-		//³Ü´ö¤£ª¾±¡¥¢±Ñ¶Ë®`§P©w
+		//å–æ¹¯ä¸çŸ¥æƒ…å¤±æ•—å‚·å®³åˆ¤å®š
 		if(btn==drol[5]){
 			drol[5].setVisible(false);
 			sandemage.setVisible(true);
@@ -570,7 +570,7 @@ public class Game extends JFrame implements ActionListener,MouseListener{
 			sanline.setText("SAN:"+san+"/80");
 			exit.setVisible(true);
 		}
-		//Â÷¶}
+		//é›¢é–‹
 		if(btn==exit){
 			sanvalue.setVisible(false);
 			sandemage.setVisible(false);
